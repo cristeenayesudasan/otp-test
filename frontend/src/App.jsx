@@ -11,7 +11,7 @@ function Home() {
 
   const handleSendOTP = async () => {
     try {
-      await axios.post('http://localhost:5000/send-otp', { email });
+      await axios.post('https://otp-test-backend.onrender.com/send-otp', { email });
       setShowOtpForm(true);
       alert('OTP sent to your email!');
     } catch (error) {
@@ -21,7 +21,7 @@ function Home() {
 
   const handleVerifyOTP = async () => {
     try {
-      await axios.post('http://localhost:5000/verify-otp', { email, otp });
+      await axios.post('https://otp-test-backend.onrender.com/verify-otp', { email, otp });
       alert('OTP verified successfully!');
       navigate('/welcome');  
     } catch (error) {
